@@ -1,0 +1,15 @@
+FUNCTION checkPalindrome(str) : BOOLEAN
+VAR
+    le : INTEGER
+    str : STRING
+BEGIN
+    le = str.length;
+    IF (le===0 || le ===1) THEN
+        RETURN TRUE;
+
+    END_IF
+    IF (str[0]===str[le-1]) THEN
+        RETURN checkPalindrome(str.slice(1,le-1));
+    END_IF
+    RETURN FALSE ;
+END
